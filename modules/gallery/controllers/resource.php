@@ -16,17 +16,23 @@
 */
 class Resource_Controller extends Controller {
 
-  public function index() {
-    if (!identity::active_user()->admin) {
-      url::redirect(item::root()->abs_url());
-    }
+    public function index() {
+        if (!identity::active_user()->admin) {
+            url::redirect(item::root()->abs_url());
+        }
 
-    $v = new View("welcome_message.html");
-    $v->user = identity::active_user();
-    print $v;
-  } // function index()
+        $v = new View("welcome_message.html");
+        $v->user = identity::active_user();
+        //        print $v;
+    } // function index()
 
+    public function item() {
+    } // function item()
 
-  public function 
-
+    public function thumb() {
+    } // function tn()
+    
+    public function resize() {
+    } // function resize()
+    
 } // class Resource_Controller
