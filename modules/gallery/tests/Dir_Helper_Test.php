@@ -18,15 +18,18 @@
  * Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA  02110-1301, USA.
  */
 class Dir_Helper_Test extends Gallery_Unit_Test_Case {
-  public function remove_album_test() {
-    $dirname = (VARPATH . "albums/testdir");
-    mkdir($dirname, 0777, true);
+    public function remove_album_test() {
+//        $dirname = (VARPATH . "albums/testdir");
+        $dirname = (ALBUMPATH . "albums/testdir");
 
-    $filename = tempnam($dirname, "file");
-    touch($filename);
+        mkdir($dirname, 0777, true);
 
-    dir::unlink($dirname);
-    $this->assert_boolean(!file_exists($filename), "File not deleted");
-    $this->assert_boolean(!file_exists($dirname), "Directory not deleted");
-  }
-}
+        $filename = tempnam($dirname, "file");
+        touch($filename);
+
+        dir::unlink($dirname);
+        $this->assert_boolean(!file_exists($filename), "File not deleted");
+        $this->assert_boolean(!file_exists($dirname), "Directory not deleted");
+
+  } // function
+} // class Dir_Helper_Test

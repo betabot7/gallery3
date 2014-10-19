@@ -102,7 +102,8 @@ class Item_Model_Core extends ORM_MPTT {
       $delete_thumb_path = dirname($thumb_path);
       if ($delete_resize_path == VARPATH . "resizes" ||
           $delete_thumb_path == VARPATH . "thumbs" ||
-          $path == VARPATH . "albums") {
+//          $path == VARPATH . "albums") {
+          $path == ALBUMPATH . "albums") {
         throw new Exception(
           "@todo DELETING_TOO_MUCH ($delete_resize_path, $delete_thumb_path, $path)");
       }
@@ -167,7 +168,8 @@ class Item_Model_Core extends ORM_MPTT {
    *   movie: /usr/home/www/gallery3/var/albums/Bobs Wedding/First-Dance.mp4
    */
   public function file_path() {
-    return VARPATH . "albums/" . urldecode($this->relative_path());
+//      return VARPATH . "albums/" . urldecode($this->relative_path());
+      return ALBUMPATH . "albums/" . urldecode($this->relative_path());
   }
 
   /**

@@ -45,7 +45,8 @@ class Packager_Controller extends Controller {
 
     // Clean out data
     dir::unlink(VARPATH . "uploads");
-    dir::unlink(VARPATH . "albums");
+//    dir::unlink(VARPATH . "albums");
+    dir::unlink(ALBUMPATH . "albums");
     dir::unlink(VARPATH . "resizes");
     dir::unlink(VARPATH . "thumbs");
     dir::unlink(VARPATH . "modules");
