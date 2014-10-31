@@ -35,8 +35,10 @@ if (!ini_get("date.timezone")) {
   ini_set("date.timezone", "UTC");
 }
 
-// Gallery requires short_tags to be on
-!ini_get("short_open_tag") and exit("Gallery requires short_open_tag to be on.");
+// betabot07 - 10/31/2014 - short open tags not needed.
+// global replace for <? to <?php
+//// Gallery requires short_tags to be on
+//!ini_get("short_open_tag") and exit("Gallery requires short_open_tag to be on.");
 
 // Suppress errors.  For information on how to debug Gallery 3, see:
 // http://codex.galleryproject.org/Gallery3:FAQ#How_do_I_see_debug_information.3F
