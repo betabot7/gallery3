@@ -67,10 +67,6 @@ define("MODPATH", realpath("modules") . "/");
 define("THEMEPATH", realpath("themes") . "/");
 define("SYSPATH", realpath("system") . "/");
 
-// moved Album path to seperate constant.
-// allows it to be moved from default location /var/albums/
-define ( "ALBUMPATH", VARPATH . "/albums/" );
-
 // We only accept a few controllers on the command line
 if (PHP_SAPI == "cli") {
   switch ($arg_1 = $_SERVER["argv"][1]) {
@@ -111,6 +107,9 @@ if (PHP_SAPI == "cli") {
   define("VARPATH", realpath("var") . "/");
 }
 define("TMPPATH", VARPATH . "tmp/");
+// moved Album path to seperate constant.
+// allows it to be moved from default location /var/albums/
+define ( "ALBUMPATH", VARPATH . "/albums/" );  
 
 if (file_exists("local.php")) {
   include("local.php");
